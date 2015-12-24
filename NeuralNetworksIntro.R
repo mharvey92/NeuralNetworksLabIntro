@@ -41,3 +41,11 @@ fitnn3=nnet(taste ~ Acetic +H2S+Lactic, cheese, size=1, linout=TRUE)
 cheesescaled=scale(cheese)
 fitnn3=nnet(taste ~ Acetic +H2S+Lactic, cheesescaled, size=1, linout=TRUE)
 summary(fitnn3)
+
+#plot nnet model 3
+library(devtools)
+source_url('https://gist.githubusercontent.com/fawda123/7471137/raw/466c1474d0a505ff044412703516c34f1a4684a5/nnet_plot_update.r')
+
+
+plot.nnet(fitnn3,pos.col='darkgreen',neg.col='darkblue',alpha.val=0.7,rel.rsc=15,
+          circle.cex=10,cex=1.4,circle.col='brown')
